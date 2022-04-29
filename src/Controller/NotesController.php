@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -18,6 +19,9 @@ class NotesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'limit' => 6,
+        ];
         $notes = $this->paginate($this->Notes);
 
         $this->set(compact('notes'));
