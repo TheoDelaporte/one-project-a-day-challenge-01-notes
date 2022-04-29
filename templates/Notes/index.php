@@ -8,40 +8,18 @@
 <div class="notes index content">
     <?= $this->Html->link(__('Ajouter une note'), ['action' => 'add'], ['class' => 'btn btn-secondary']) ?>
     <h3><?= __('Mes notes') ?></h3>
-    <div class="table-responsive">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('title') ?></th>
-                    <th><?= $this->Paginator->sort('note') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($notes as $note) : ?>
-                    <tr>
-                        <td><?= $this->Number->format($note->id) ?></td>
-                        <td><?= h($note->title) ?></td>
-                        <td><?= h($note->note) ?></td>
-                        <td><?= h($note->created) ?></td>
-                        <td><?= h($note->modified) ?></td>
-                        <td class="actions">
-                            <?= $this->Html->link(__('View'), ['action' => 'view', $note->id]) ?>
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $note->id]) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $note->id], ['confirm' => __('Are you sure you want to delete # {0}?', $note->id)]) ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+    <div class="row">
+        <?php foreach ($notes as $note) : ?>
+            <div class="col-12 col-md-4 col-sm-6 col-xs-12">
+                <?= $this->element('Notes/card', ['note' => $note]); ?>
+            </div>
+        <?php endforeach; ?>
     </div>
-    <div class="paginator">
-        <ul class="pagination">
+    <br>
+    <div class="paginator text-center">
+        <ul class="pagination justify-content-center">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous'), ['class' => 'nav-link']) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
