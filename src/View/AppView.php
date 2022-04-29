@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -13,6 +14,7 @@ declare(strict_types=1);
  * @since     3.0.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\View;
 
 use Cake\View\View;
@@ -39,10 +41,10 @@ class AppView extends View
     {
         $this->loadHelper('Paginator', [
             'templates' => [
-                'nextActive' => '<li class="next"><a rel="next" class="btn btn-outline-dark m-1" href="{{url}}">{{text}}</a></li>',
-                'nextDisabled' => '<li class="next disabled"><a class="btn btn-outline-secondary m-1" disabled href="" onclick="return false;">{{text}}</a></li>',
-                'prevActive' => '<li class="prev"><a rel="prev" class="btn btn-outline-dark m-1" href="{{url}}">{{text}}</a></li>',
-                'prevDisabled' => '<li class="prev disabled"><a class="btn btn-outline-secondary m-1" disabled href="" onclick="return false;">{{text}}</a></li>',
+                'nextActive' => '<li class="next"><a rel="next" class="btn btn-primary" href="{{url}}">{{text}}</a></li>',
+                'nextDisabled' => '<li class="next disabled"><a class="btn btn-secondary" disabled href="" onclick="return false;">{{text}}</a></li>',
+                'prevActive' => '<li class="prev"><a rel="prev" class="btn btn-primary" href="{{url}}">{{text}}</a></li>',
+                'prevDisabled' => '<li class="prev disabled"><a class="btn btn-secondary" disabled href="" onclick="return false;">{{text}}</a></li>',
             ]
         ]);
         $this->loadHelper('Form', [
