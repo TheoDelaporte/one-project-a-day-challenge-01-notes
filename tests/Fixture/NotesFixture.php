@@ -43,8 +43,8 @@ class NotesFixture extends TestFixture
                 'id' => 1,
                 'title' => 'Lorem ipsum dolor sit amet',
                 'note' => 'Lorem ipsum dolor sit amet',
-                'created' => '2022-04-29 08:14:28',
-                'modified' => '2022-04-29 08:14:28',
+                'created' => '2022-04-29 09:19:26',
+                'modified' => '2022-04-29 09:19:26',
             ],
         ];
         parent::init();
